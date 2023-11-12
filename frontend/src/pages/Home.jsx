@@ -15,7 +15,8 @@ export default function Home () {
   useEffect(() => {
     const fetchWordTable = async() => {
       try{
-        const response = await axios.get('http://localhost:4000')
+        // const response = await axios.get('http://localhost:4000')
+        const response = await axios.get('https://word-learning-app.onrender.com')
         setFetchData(response.data);
         console.log(response.data);
       }catch(error){

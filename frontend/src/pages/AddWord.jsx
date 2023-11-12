@@ -30,7 +30,8 @@ export default function AddWord() {
   const navigate = useNavigate();
 
   const handleAddWord = async() => {
-    await axios.post('http://localhost:4000/add_word',{word,nounSingular,nounPlural,nounMeaning,verbSingular,verbPlural,verbMeaning,sp,pc,pp,ppc,spa,pac,pap,papc,sf,fc,fp,fpc})
+    // await axios.post('http://localhost:4000/add_word',{word,nounSingular,nounPlural,nounMeaning,verbSingular,verbPlural,verbMeaning,sp,pc,pp,ppc,spa,pac,pap,papc,sf,fc,fp,fpc})
+    await axios.post('https://word-learning-app.onrender.com/add_word',{word,nounSingular,nounPlural,nounMeaning,verbSingular,verbPlural,verbMeaning,sp,pc,pp,ppc,spa,pac,pap,papc,sf,fc,fp,fpc})
     .then((response) => {
       if (response.data === 'Word added successfully') {
           console.log('Word added successfully', response.data);
