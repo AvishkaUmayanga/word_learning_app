@@ -17,8 +17,9 @@ export default function Home () {
       try{
         // const response = await axios.get('http://localhost:4000')
         const response = await axios.get('https://word-learning-app.onrender.com')
-        setFetchData(response.data);
-        console.log(response.data);
+	      const parseResponse = JSON.stringify(response.data)
+        setFetchData(parseResponse);
+        console.log(parseResponse);
       }catch(error){
         console.log(error);
       }

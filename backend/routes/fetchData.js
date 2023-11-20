@@ -14,7 +14,7 @@ router.get('/', async(req, res) => {
         if(error){
             return res.status(500).json("supabase error")
         }
-        return res.status(200).json(data)
+        return res.status(200).json(JSON.stringify(data))
     }
     catch(error){
         return res.status(500).json("server error")
