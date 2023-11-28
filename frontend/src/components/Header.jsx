@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div>
       <div className='flex items-center justify-end h-12 bg-bluecolor'>
-        <ul className='flex gap-5 pr-5 text-white fon'>
+        <ul className='flex gap-5 pr-5 text-white '>
           <li><NavLink to="/" className={({ isActive }) => (isActive ? activeLink : "")}> Home </NavLink></li>
           <li><NavLink to="/add_word" className={({ isActive }) => (isActive ? activeLink : "")}> Add New Word </NavLink></li>
           {/* <li><NavLink to="/guide" className={({ isActive }) => (isActive ? activeLink : "")}> Guide </NavLink></li> */}

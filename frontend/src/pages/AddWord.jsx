@@ -10,17 +10,12 @@ export default function AddWord() {
 
   const [word,setWord] = useState(null);
   const [wordMeaning,setWordMeaning] = useState(null);
-  
   const [nounSingular,setNsingular] = useState(null);
   const [nounPlural,setNplural] = useState(null);
   const [nounExample,setNounExample] = useState(null);
-  
   const [proNounExample,setproNounExample] = useState(null);
-
   const [adjectiveExample,setadjectiveExample] = useState(null);
-
   const [adverbExample,setadverbExample] = useState(null);
-
   const [verbSingular,setverbSingular] = useState(null);
   const [verbPlural,setverbPlural] = useState(null);
   const [pastParticiple,setpastParticiple] = useState(null);
@@ -28,13 +23,9 @@ export default function AddWord() {
   const [presentParticiple,setpresentParticiple] = useState(null);
   const [futureTense,setfutureTense] = useState(null);
   const [verbExample,setverbExample] = useState(null);
-  
   const [prePositionExample,setprePositionExample] = useState(null);
-  
   const [conjunctionExample,setConjunctionExample] = useState(null);
-
   const [interjectionExample,setInterjectionExample] = useState(null);
-
   const [articleExample,setArticleExample] = useState(null);
 
   
@@ -43,8 +34,8 @@ export default function AddWord() {
   const handleAddWord = async(e) => {
     e.preventDefault();
     try{
-      const response = await axios.post('https://word-learning-app.onrender.com/add_word',
-      // const response = await axios.post('http://localhost:4000/add_word',
+      // const response = await axios.post('https://word-learning-app.onrender.com/add_word',
+      const response = await axios.post('http://localhost:4000/add_word',
       {word, 
       wordMeaning, 
       nounSingular, 

@@ -2,30 +2,10 @@ const express = require('express')
 const router = express.Router()
 const supabase = require('../supabase')
 
-router.get('/get_word/:wordId', async(req, res) =>{
-    const wordId = req.params.wordId;
+router.get('/get_word/:id', async(req, res) =>{
+    const wordId = req.params.id;
 
     try{
-        const {word, 
-            wordMeaning, 
-            nounSingular, 
-            nounPlural, 
-            nounExample,
-            proNounExample,
-            adjectiveExample,
-            adverbExample,
-            verbSingular,
-            verbPlural,
-            pastParticiple,
-            pastTense,
-            presentParticiple,
-            futureTense,
-            verbExample,
-            prePositionExample,
-            conjunctionExample,
-            interjectionExample,
-            articleExample} = req.body;
-        
         const {data,error} = await supabase
         .from('words')
         .select()

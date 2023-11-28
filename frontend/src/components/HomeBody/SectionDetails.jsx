@@ -18,16 +18,16 @@ function SectionDetails({ sectionName, data }) {
           <h3>{sectionName}</h3>
         </div>
       </div>
-        <div className='grid grid-cols-2 gap-4'>
-          {Object.entries(data).map(([key, value]) =>(
-            <div key={key} className='bg-white w-[135px] h-[90px] rounded-lg flex flex-col p-1 justify-center xs:w-[150px] xs:h-[100px]'>
-              <div className='flex self-start text-sm'>
-                <h3>{key}</h3>
-              </div>
-              <div className='flex justify-center font-semibold text-center'>
-                <p>{value}</p>
-              </div>
+      <div className='grid grid-cols-2 gap-4'>
+        {Object.entries(data).map(([key, value]) =>(
+          <div key={key} className='bg-white w-[135px] h-[90px] rounded-lg flex flex-col p-1 xs:w-[150px] xs:h-[100px]'>
+            <div className='flex text-sm'>
+              <h3>{key}</h3>
             </div>
+            <div className='flex justify-center h-full py-4 text-center'>
+              <p>{value}</p>
+            </div>
+          </div>
         ))}
         </div>
     </div>
