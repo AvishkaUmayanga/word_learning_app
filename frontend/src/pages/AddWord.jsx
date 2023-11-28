@@ -43,8 +43,8 @@ export default function AddWord() {
   const handleAddWord = async(e) => {
     e.preventDefault();
     try{
-      // const response = await axios.post('https://word-learning-app.onrender.com/add_word',{})
-      const response = await axios.post('http://localhost:4000/add_word',
+      const response = await axios.post('https://word-learning-app.onrender.com/add_word',
+      // const response = await axios.post('http://localhost:4000/add_word',
       {word, 
       wordMeaning, 
       nounSingular, 
