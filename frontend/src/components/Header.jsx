@@ -11,7 +11,7 @@ export default function Header() {
         <ul className='flex gap-5 pr-5 text-white fon'>
           <li><NavLink to="/" className={({ isActive }) => (isActive ? activeLink : "")}> Home </NavLink></li>
           <li><NavLink to="/add_word" className={({ isActive }) => (isActive ? activeLink : "")}> Add New Word </NavLink></li>
-          <li><NavLink to="/guide" className={({ isActive }) => (isActive ? activeLink : "")}> Guide </NavLink></li>
+          {/* <li><NavLink to="/guide" className={({ isActive }) => (isActive ? activeLink : "")}> Guide </NavLink></li> */}
         </ul>
       </div>
     </div>

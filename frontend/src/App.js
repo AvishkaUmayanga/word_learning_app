@@ -6,11 +6,13 @@ import {
 import Home from "./pages/Home";
 import Guide from "./pages/Guide";
 import AddWord from "./pages/AddWord";
+import UpdateWord from "./pages/UpdateWord";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home/> },
   { path : "/guide", element: <Guide/>},
   { path : "/add_word", element: <AddWord/>},
+  { path : "/update_word", element: <UpdateWord/> },
 ]);
 
 

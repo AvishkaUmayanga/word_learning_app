@@ -2,8 +2,9 @@ const express = require('express')
 const router = express.Router()
 const supabase = require('../supabase')
 
-router.post('/add_word', async (req, res) => {
-    
+router.put('/update_word/:wordId', async(req, res) =>{
+    const wordId = req.params.wordId;
+
     try{
         const {word, 
             wordMeaning, 
@@ -24,22 +25,22 @@ router.post('/add_word', async (req, res) => {
             conjunctionExample,
             interjectionExample,
             articleExample} = req.body;
-
-        const {data:existWord, error:existError} = await supabase
-        .from('words')  
-        .select()
-        .eq('word',word) 
-         
-        if(existError){
-            return res.status(500).json('Supabase error')
-        }
-        if(existWord && existWord.length>0){
-            return res.status(400).json('word already exist')
-        }
-
-        const {data, error} = await supabase
+        
+        const{data:existWord,error:existError} = await supabase
         .from('words')
-        .insert([{word, 
+        .select()
+        .eq('id',wordId)
+
+        if(existError){
+            return res.status(500).json('supabase error')
+        }
+        if(existWord.length===0){
+            return res.status(404).json('word not found')
+        }
+
+        const{data,error:updateError} = await supabase
+        .from('words')
+        .update({word, 
             wordMeaning, 
             nounSingular, 
             nounPlural, 
@@ -57,17 +58,18 @@ router.post('/add_word', async (req, res) => {
             prePositionExample,
             conjunctionExample,
             interjectionExample,
-            articleExample}])
+            articleExample})
+        .eq('id',wordId)
+        .select()
 
-        if(error){
-            return res.status(500).json("supabase error")
+        if(updateError){
+            return res.status(500).json('supabase error')
         }
-        return res.status(200).json("Word added successfully");
+        return res.status(200).json('update succesfull')
     }
     catch(error){
         return res.status(500).json("server error")
     }
+})
     
-});
-
 module.exports = router;
