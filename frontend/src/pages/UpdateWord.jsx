@@ -31,6 +31,7 @@ export default function UpdateWord() {
   useEffect(()=>{
     const fetchWordDetails = async() =>{
       const response = await axios.get(`http://localhost:4000/get_word/${id}`,{})
+      // const response = await axios.get(`https://word-learning-app.onrender.com/get_word/${id}`,{})
       console.log(response.data)
     }
     fetchWordDetails()
@@ -39,6 +40,7 @@ export default function UpdateWord() {
   const handleUpdate = async(e) =>{
     e.preventDefault()
     try{
+      // const response = await axios.put(`https://word-learning-app.onrender.com/update_word/${id}`,
       const response = await axios.put(`http://localhost:4000/update_word/${id}`,
       {word, 
       wordMeaning, 
